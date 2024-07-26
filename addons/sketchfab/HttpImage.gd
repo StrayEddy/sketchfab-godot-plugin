@@ -59,7 +59,6 @@ func _draw():
 	draw_texture_rect(texture, rect, false)
 
 func _start_load():
-	print("loading image")
 	http.cancel_request()
 	texture = null
 	update_minimum_size()
@@ -81,7 +80,7 @@ func _start_load():
 	url_to_load = null
 
 func _load(url_to_load):
-	http.request(url_to_load, [], false)
+	http.request(url_to_load, [], HTTPClient.METHOD_GET)
 
 	busy = true
 	var data = await http.request_completed

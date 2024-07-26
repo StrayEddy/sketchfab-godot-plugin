@@ -83,7 +83,10 @@ func request(path, payload = null, options = DEFAULT_OPTIONS):
 	while reconnect_tries:
 		http.poll()
 		if http.get_status() != HTTPClient.STATUS_CONNECTED:
-			http.connect_to_host(hostname, -1, use_ssl, false)
+			var tls_options = null
+			if use_ssl:
+				tls_options = TLSOptions.client()
+			http.connect_to_host(hostname, -1, tls_options)
 			while true:
 				await Engine.get_main_loop().process_frame
 				if terminated:
