@@ -91,14 +91,17 @@ func _notification(what):
 		search_categories.get_popup().add_check_item("All")
 		search_categories.get_popup().index_pressed.connect(_on_Categories_index_pressed)
 
+		search_face_count.clear()
 		for item in FACE_COUNT_OPTIONS:
 			search_face_count.add_item(item[0])
 		_commit_face_count(0)
 
+		search_sort_by.clear()
 		for item in SORT_BY_OPTIONS:
 			search_sort_by.add_item(item[0])
 		_commit_sort_by(SORT_BY_DEFAULT_INDEX)
 
+		search_domain.clear()
 		for item in SEARCH_DOMAIN:
 			search_domain.add_item(item[0])
 		_commit_domain(DEFAULT_DOMAIN)
@@ -224,7 +227,7 @@ func _populate_login():
 
 	var avatar = SafeData.dictionary(user, "avatar")
 	var images = SafeData.array(avatar, "images")
-	var image = SafeData.dictionary(images, 0)
+	var image = SafeData.dictionary(images, 2)
 	logged_avatar.url = SafeData.string(image, "url")
 
 func _logout():
@@ -247,6 +250,7 @@ func _load_categories():
 	var categories = SafeData.array(result, "results")
 	var i = 0
 	var popup = search_categories.get_popup()
+	popup.clear()
 	for category in categories:
 		popup.add_check_item(SafeData.string(category, "name"))
 		popup.set_item_metadata(i + 1, SafeData.string(category, "slug"))

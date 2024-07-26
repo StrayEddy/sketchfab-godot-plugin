@@ -81,7 +81,7 @@ func _start_load():
 	url_to_load = null
 
 func _load(url_to_load):
-	http.request(url_to_load, [], false)
+	http.request(url_to_load, [], HTTPClient.METHOD_GET)
 
 	busy = true
 	var data = await http.request_completed
