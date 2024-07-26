@@ -59,7 +59,6 @@ func _draw():
 	draw_texture_rect(texture, rect, false)
 
 func _start_load():
-	print("loading image")
 	http.cancel_request()
 	texture = null
 	update_minimum_size()
