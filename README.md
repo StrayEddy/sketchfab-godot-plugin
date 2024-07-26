@@ -1,10 +1,11 @@
 # Sketchfab Plugin Redone For Godot 4.0
+
 **Import models from Sketchfab to Godot (v4.0+)**
 
-* [Installation](#Installation)
-* [Login](#Login)
-* [Import a model from Sketchfab](#import-a-model-from-sketchfab)
-* [Report an issue](#report-an-issue)
+- [Installation](#Installation)
+- [Login](#Login)
+- [Import a model from Sketchfab](#import-a-model-from-sketchfab)
+- [Report an issue](#report-an-issue)
 
 ## Installation
 
@@ -44,3 +45,7 @@ To download and import an asset, click on a model card to display the correspond
 If you feel like you've encountered a bug, or that the plugin lacks an important feature, you can [create an issue](https://github.com/StrayEddy/sketchfab-godot-plugin/issues/new) in this repository.
 
 If you report a bug, please try to append any log from Godot or additional information (Godot version, Operating System...) in your message.
+
+## Contributors
+
+- [@jonykalavera](https://github.com/jonykakavera)
